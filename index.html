@@ -66,6 +66,8 @@ function closeModal() {
     document.getElementById("popup").style.display = "none";
 }
 
+// 
+
 document.getElementById("emailForm")
 .addEventListener("submit", async function(e){
 
@@ -74,7 +76,7 @@ document.getElementById("emailForm")
     const email =
         document.getElementById("email").value;
 
-    await fetch(SCRIPT_URL,{
+    fetch(SCRIPT_URL,{
         method:"POST",
         body:JSON.stringify({
             event:"email_signup",
@@ -82,9 +84,14 @@ document.getElementById("emailForm")
         })
     });
 
-    alert("ایمیل شما ثبت شد");
+    document.querySelector(".modal-content").innerHTML = `
+        <h2>✅ ثبت شد</h2>
+        <p>از ثبت‌نام شما متشکریم.</p>
+    `;
 
-    document.getElementById("popup").style.display = "none";
+    setTimeout(() => {
+        document.getElementById("popup").style.display = "none";
+    }, 1500);
 });
 
 </script>
