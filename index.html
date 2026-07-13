@@ -7,16 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<script>
-function openModal() {
-    document.getElementById("popup").style.display = "flex";
-}
-
-function closeModal() {
-    document.getElementById("popup").style.display = "none";
-}
-</script>
-
 <body>
     <section class="hero">
 
@@ -43,22 +33,60 @@ function closeModal() {
                         برای قرارگیری در اولویت رزرو هفته آینده، ایمیل خود را وارد کنید.
                     </p>
 
-                    <form>
-                        <input
-                            type="email"
-                            placeholder="ایمیل شما"
-                            required
-                        >
-
-                        <button type="submit">
-                            ثبت
-                        </button>
+                    <form id="emailForm">
+                        <input type="email" id="email" required>
+                        <button type="submit">ثبت</button>
                     </form>
                 </div>
             </div>
         </div>
 
     </section>
+
+    <script>
+
+    const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbyXM9lYtkrmkyIpJ9JiCP5n1BhUBbfESUK0DM_wWQJ27C048hqoLX_jSH3MaBcBmlHf/exec";
+
+function openModal() {
+
+    fetch(SCRIPT_URL,{
+        method:"POST",
+        body:JSON.stringify({
+            event:"button_click"
+        })
+    });
+
+    document
+      .getElementById("popup")
+      .style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("popup").style.display = "none";
+}
+
+document
+.getElementById("emailForm")
+.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const email =
+      document.getElementById("email").value;
+
+    await fetch(SCRIPT_URL,{
+        method:"POST",
+        body:JSON.stringify({
+            event:"email_signup",
+            email:email
+        })
+    });
+
+    alert("ایمیل شما ثبت شد");
+});
+
+</script>
 
 </body>
 </html>
