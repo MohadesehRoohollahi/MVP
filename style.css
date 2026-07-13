@@ -165,3 +165,67 @@ body {
     cursor: pointer;
 }
 
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    .navbar {
+        top: 0;
+        left: 0;
+    }
+
+    .logo-container img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .logo-container {
+        font-size: 1.2rem;
+    }
+
+    .logo-container span {
+        margin-left: -15px;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        width: 100%;
+        font-size: 2.3rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        width: 92%;
+        padding: 25px 20px;
+    }
+
+    .modal-content form {
+        flex-direction: column;
+    }
+
+    .modal-content input,
+    .modal-content button {
+        width: 100%;
+    }
+
+    .modal-content button {
+        margin-top: 10px;
+    }
+}
+
