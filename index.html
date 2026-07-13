@@ -66,14 +66,13 @@ function closeModal() {
     document.getElementById("popup").style.display = "none";
 }
 
-document
-.getElementById("emailForm")
+document.getElementById("emailForm")
 .addEventListener("submit", async function(e){
 
     e.preventDefault();
 
     const email =
-      document.getElementById("email").value;
+        document.getElementById("email").value;
 
     await fetch(SCRIPT_URL,{
         method:"POST",
@@ -83,7 +82,16 @@ document
         })
     });
 
-    alert("ایمیل شما ثبت شد");
+    document.querySelector(".modal-content").innerHTML = `
+        <h2>✅ ثبت شد</h2>
+        <p>
+            ممنون! در صورت موجود شدن سبدهای هفته آینده به شما اطلاع می‌دهیم.
+        </p>
+    `;
+
+    setTimeout(() => {
+        document.getElementById("popup").style.display = "none";
+    }, 2500);
 });
 
 </script>
