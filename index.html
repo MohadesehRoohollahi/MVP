@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batenno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+function openModal() {
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+<body>
+    <section class="hero">
+
+        <header class="navbar">
+            <div class="logo-container">
+                <img src="logo2.png" alt="Logo">
+                <span>Batenno</span>
+            </div>
+        </header>
+
+        <div class="hero-content">
+            <h1>طعم اصیل طبیعت با قیمتی منطقی</h1>
+            <p>.میوه‌های %100 ارگانیک و سالم با ظاهر نامتعارف با %40 تخفیف به دست شما می‌رسند</p>
+            <a href="#" class="btn" onclick="openModal()">سفارش سبد این هفته</a>
+
+            <div id="popup" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+
+                    <h2>ظرفیت این هفته تکمیل شد</h2>
+
+                    <p>
+                        به دلیل استقبال زیاد، ظرفیت این هفته تکمیل شده است.
+                        برای قرارگیری در اولویت رزرو هفته آینده، ایمیل خود را وارد کنید.
+                    </p>
+
+                    <form>
+                        <input
+                            type="email"
+                            placeholder="ایمیل شما"
+                            required
+                        >
+
+                        <button type="submit">
+                            ثبت
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>
